@@ -30,7 +30,12 @@ config.py               # Hyperparameters and training settings
 | AVP | AI4AVP (PC6 + CNN) | Antiviral activity |
 | HEM | LysisPeptica (PepBERT + CNN ensemble) | Hemolysis (minimize) |
 
-> **Note:** The AFP ProtBERT checkpoint (`afp_prediction/ensemble_model/bert/`, ~1.6 GB) and one LysisPeptica model (`hem_prediction/lysispeptica_models_thr10/p843_750_5041chatt_ugml2std.keras`, ~97 MB) are excluded from this repo due to file size. Download them separately and place them in their respective directories before running AFP or HEM inference.
+> **Large model files are excluded from this repo.** Download them and place in the indicated paths before running AFP or HEM inference.
+>
+> | File | Size | Path | Download |
+> |------|------|------|----------|
+> | AFP ProtBERT checkpoint | ~1.6 GB | `afp_prediction/ensemble_model/bert/ensemble_prot_bert_bfd_epoch1_1e-06.pt` | [HuggingFace](https://huggingface.co/datasets/wccheng1210/AI4AFP_model/resolve/main/ensemble_model/bert/ensemble_prot_bert_bfd_epoch1_1e-06.pt?download=true) |
+> | LysisPeptica HEM model | ~97 MB | `hem_prediction/lysispeptica_models_thr10/p843_750_5041chatt_ugml2std.keras` | *(source repo)* |
 
 ## Requirements
 
