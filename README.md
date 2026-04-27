@@ -1,6 +1,6 @@
-# Peptide Optimization v1
+# RL4AXP
 
-A reinforcement learning framework for multi-objective antimicrobial peptide (AMP) optimization using Proximal Policy Optimization (PPO).
+A reinforcement learning framework for multi-objective functional peptide (ACP/AFP/AMP/AVP) optimization using Proximal Policy Optimization (PPO).
 
 ## Overview
 
