@@ -24,9 +24,9 @@ config.py               # Hyperparameters and training settings
 
 | Module | Method | Target |
 |--------|--------|--------|
-| AMP | AI4AMP (PC6 + CNN) | Antimicrobial activity |
 | ACP | AI4ACP (PC6 + CNN) | Anticancer activity |
 | AFP | Ensemble (Doc2Vec + PC6 + ProtBERT) | Antifungal activity |
+| AMP | AI4AMP (PC6 + CNN) | Antimicrobial activity |
 | AVP | AI4AVP (PC6 + CNN) | Antiviral activity |
 | HEM | LysisPeptica (PepBERT + CNN ensemble) | Hemolysis (minimize) |
 
@@ -68,8 +68,12 @@ The dashboard allows real-time monitoring of reward curves, peptide sequences, a
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `TARGET_PEPTIDE` | `RVKRVWPLVIRTVIAGYNLYRAIKKK` | Seed peptide for optimization |
-| `N_EPISODES` | 100,000 | Training episodes |
-| `TIME_HORIZON` | 5 | Steps per episode |
-| `N_PARALLELS` | 200 | Parallel environments |
-| `ENCODING_SCHEME` | `PepBERT-large` | Sequence embedding method |
+| `TARGET_PEPTIDE` | `RVKRVWPLVIRTVIAGYNLYRAIKKK` | Seed peptide for optimization. The agent starts from this sequence and iteratively mutates it. |
+| `N_EPISODES` | `100_000` | Total training episodes. If increased significantly, consider also reducing `AGENTS_LR` and increasing `AGENTS_LR_STEP_SIZE` to allow the learning rate schedule to decay more gradually. |
+| `AGENTS_LR` | `2e-5` | Initial learning rate for actor and critic networks. |
+| `AGENTS_LR_STEP_SIZE` | `3` | Learning rate is multiplied by `AGENTS_LR_GAMMA` every this many × `CHECKPOINT_INTERVAL` episodes. |
+| `AGENTS_LR_GAMMA` | `0.7` | Multiplicative learning rate decay factor applied at each scheduler step. |
+| `TIME_HORIZON` | `5` | **Mutation budget per episode.** Each episode allows the agent exactly this many amino-acid substitutions on the seed peptide before the trajectory is collected and the policy is updated. |
+| `N_PARALLELS` | `200` | Number of peptide sequences evolved in parallel per episode. Higher values improve sample diversity and GPU utilisation but increase memory usage. |
+| `ENCODING_SCHEME` | `PepBERT-large` | Sequence embedding fed to the actor/critic networks. Options: `One-Hot_Encoding` (peptide length × 20, fast, no pretrained weights), `Compressive_Sensing` (random projection of one-hot to dim 32, very fast), `PepBERT-small` (mean-pooled embeddings from a lightweight PepBERT variant), `PepBERT-large` (mean-pooled embeddings from the full PepBERT model, highest expressiveness, recommended). |
+| `CHECKPOINT_INTERVAL` | `1000` | Save model weights every this many episodes. |
