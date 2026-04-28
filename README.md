@@ -22,13 +22,13 @@ config.py               # Hyperparameters and training settings
 
 ## Prediction Models
 
-| Module | Method | Target |
-|--------|--------|--------|
-| ACP | AI4ACP (PC6 + CNN) | Anticancer activity |
-| AFP | Ensemble (Doc2Vec + PC6 + ProtBERT) | Antifungal activity |
-| AMP | AI4AMP (PC6 + CNN) | Antimicrobial activity |
-| AVP | AI4AVP (PC6 + CNN) | Antiviral activity |
-| HEM | LysisPeptica (PepBERT + CNN ensemble) | Hemolysis (minimize) |
+| Module | Method | Target | GitHub |
+|--------|--------|--------|--------|
+| ACP | AI4ACP (PC6 + CNN) | Anticancer activity | [AI4ACP](https://github.com/yysun0116/AI4ACP) |
+| AFP | Ensemble (Doc2Vec + PC6 + ProtBERT) | Antifungal activity | [AI4AFP](https://github.com/lsbnb/AI4AFP) |
+| AMP | AI4AMP (PC6 + CNN) | Antimicrobial activity | [AI4AMP_predictor](https://github.com/LinTzuTang/AI4AMP_predictor) |
+| AVP | AI4AVP (PC6 + CNN) | Antiviral activity | [AI4AVP_predictor](https://github.com/LinTzuTang/AI4AVP_predictor) |
+| HEM | LysisPeptica (PepBERT + CNN ensemble) | Hemolysis (minimize) | [LysisPeptica](https://github.com/lsbnbiis/LysisPeptica) |
 
 > **Large model files are excluded from this repo.** Download them and place in the indicated paths before running AFP or HEM inference.
 >
