@@ -26,7 +26,7 @@ config.py               # Hyperparameters and training settings
 |--------|--------|--------|--------|
 | ACP | AI4ACP (PC6 + CNN) | Anticancer activity | [AI4ACP](https://github.com/yysun0116/AI4ACP) |
 | AFP | Ensemble (Doc2Vec + PC6 + ProtBERT) | Antifungal activity | [AI4AFP](https://github.com/lsbnb/AI4AFP) |
-| AMP | AI4AMP (PC6 + CNN) | Antimicrobial activity | [AI4AMP_predictor](https://github.com/LinTzuTang/AI4AMP_predictor) |
+| AMP | AI4AMP (PC6 + CNN-LSTM) | Antimicrobial activity | [AI4AMP_predictor](https://github.com/LinTzuTang/AI4AMP_predictor) |
 | AVP | AI4AVP (PC6 + CNN) | Antiviral activity | [AI4AVP_predictor](https://github.com/LinTzuTang/AI4AVP_predictor) |
 | HEM | LysisPeptica (PepBERT + CNN ensemble) | Hemolysis (minimize) | [LysisPeptica](https://github.com/lsbnbiis/LysisPeptica) |
 
